@@ -1,0 +1,94 @@
+$column-count: 12;
+$gutter: 12px; // 12*2 = 24
+$gutter-space: (
+   0: 0,
+   4: 4px,
+   6: 6px,
+   8: 8px,
+   12: 12px,
+   16: 16px,
+   20: 20px,
+   24: 24px,
+   28: 28px,
+   32: 32px,
+   36: 36px,
+   40: 40px,
+   44: 44px,
+   48: 48px,
+   52: 52px,
+   56: 56px,
+   60: 60px,
+   64: 64px,
+   68: 68px,
+);
+$maxWidth: 1440px;
+$grid-breakpoints: (
+   xs: 0,
+   sm: 576px,
+   md: 768px,
+   lg: 992px,
+   xl: 1104px,
+);
+$container-max-widths: (
+   sm: 540px,
+   md: 720px,
+   lg: 960px,
+   xl: 1216px
+);
+
+$spaces: (
+   mt: margin-top,
+   mb: margin-bottom,
+   ml: margin-left,
+   mr: margin-right,
+   mx: margin-inline,
+   m : margin,
+   pt: padding-top,
+   pb: padding-bottom,
+   pl: padding-left,
+   pr: padding-right,
+   px: padding-inline,
+   p : padding,
+);
+
+$white: #FFFFFF;
+$black: #000000;
+$transparent: trasnaprent;
+
+//Text colors
+$text-dark: #050F21;
+$text-base: #283A5B;
+$text-medium: #8A94A6;
+$text-light: #B0B7C3;
+
+$outline-dark: #B0B7C3;
+$outline-base: #C9CED6;
+$outline-medium: #E1E4E8;
+$outline-light: #F1F2F4;
+
+.br4 {
+   border-radius: 4px;
+}
+
+.br8 {
+   border-radius: 8px;
+}
+
+.br16 {
+   border-radius: 16px;
+}
+
+.br48 {
+   border-radius: 48px;
+}
+
+
+///SHADOWS
+$box-shadow2: 0px 2px 2px rgba(10, 31, 68, 0.06);
+$box-shadow4: 0px 4px 4px rgba(10, 31, 68, 0.04), 0px 4px 8px rgba(10, 31, 68, 0.04);
+$box-shadow8: 0px 12px 12px rgba(10, 31, 68, 0.04), 0px 16px 24px rgba(10, 31, 68, 0.04);
+$box-shadow12: 0px 8px 8px rgba(10, 31, 68, 0.08), 0px 8px 16px rgba(10, 31, 68, 0.06);
+$box-shadow16: 0px 16px 16px rgba(10, 31, 68, 0.08), 0px 24px 32px rgba(10, 31, 68, 0.08);
+$box-shadow20: 0px 20px 20px rgba(10, 31, 68, 0.1), 0px 32px 40px rgba(10, 31, 68, 0.1);
+$box-shadow24: 0px 24px 24px rgba(10, 31, 68, 0.1), 0px 40px 48px rgba(10, 31, 68, 0.25);
+$box-shadow28: 0px 28px 28px rgba(10, 31, 68, 0.15), 0px 48px 56px rgba(10, 31, 68, 0.25);

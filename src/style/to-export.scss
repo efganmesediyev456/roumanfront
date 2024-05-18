@@ -1,0 +1,46 @@
+/*HIGH ORDER STYLES*/
+@import "core/variables";
+@import "core/high-order-style";
+@import "icons/style";
+
+/*CORE*/
+@import "core/mixins";
+@import "core/typography";
+@import "core/icon-styles";
+
+/*USER INTERFACE*/
+@import "UI/forms";
+@import "UI/links";
+@import "UI/lists";
+@import "UI/tables";
+@import "UI/buttons";
+@import "UI/cards";
+@import "UI/arrows";
+@import "UI/accordions";
+@import "UI/pagination";
+@import "UI/tags";
+@import "UI/modal";
+@import "UI/tabs";
+
+/*PLUGINS*/
+//@import "plugins/owl-carousel";
+
+//@import "plugins/fancybox";
+
+/*PARTIALS*/
+
+/*COMPONENTS*/
+@import "components/header";
+@import "components/footer";
+@import "components/gallery";
+@import "components/index";
+@import "components/usability";
+
+/*DEFAULT*/
+@import "general";
+@import "responsive";
+
+/*CORE*/
+@import "core/grid-system";
+
+

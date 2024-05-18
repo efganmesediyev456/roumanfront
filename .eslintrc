@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": ["error","single"],
+    "no-var": "error",
+    "no-unused-vars": "warn",
+   "no-plusplus": "off",
+   "func-names": "off"
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": ["airbnb-base/legacy"]
+}

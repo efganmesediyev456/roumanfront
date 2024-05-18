@@ -1,0 +1,23 @@
+@mixin typo($font-family,$font-size,$line-height: normal,$letter-spacing: normal)
+{
+  font-family: $font-family , 'sans-serif' , 'Arial' ;
+  font-size: #{$font-size}px;
+  @if $line-height == normal {
+    line-height: #{$line-height}px;
+  } @else {
+    line-height: #{$line-height}px;
+  }
+   @if $letter-spacing == normal {
+      letter-spacing: normal;
+   } @else {
+      letter-spacing: #{$letter-spacing}em;
+   }
+
+}
+
+
+@mixin transition($sec, $selectors...)
+{
+transition: all $sec ease-in-out;
+transition-property: $selectors ;
+}

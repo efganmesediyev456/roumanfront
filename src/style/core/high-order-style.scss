@@ -1,0 +1,94 @@
+*:where(:not(iframe,canvas,img,svg,video):not(svg *)),
+*::after,*::before{
+  display:revert;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+   list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a{
+   cursor: pointer;
+
+}
+
+img{
+   vertical-align: bottom;
+}
+
+
+h1,h2,h3,h4,h5,h6,p,span,a,ul,li{
+   color: unset;
+   font-style: normal;
+   font-weight: normal;
+   font-size: unset;
+   line-height: unset;
+   margin: 0;
+   padding: 0;
+}
+
+button,a,input,textarea,select
+{
+   appearance: none;
+   text-decoration: none;
+   outline: unset;
+   border: unset;
+   background: unset;
+   margin: 0;
+   padding: 0;
+}
+
+body
+{
+   margin: 0;
+   padding: 0;
+   background: $white;
+   position: relative;
+
+   @extend .body-l-reg;
+}
+
+
+.full-image{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.left-top
+{
+   top: 0;
+   left: 0;
+   position: absolute;
+}
+
+.ab-center
+{
+   top: 50%;
+   left: 50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+}
+
+.center{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.max-width
+{
+   width: 100%;
+   max-width: $maxWidth;
+   margin: 0 auto;
+}
+
+
+.relative{
+   position: relative;
+}
+

@@ -1,0 +1,37 @@
+//- include ../includes/header
+
+block globalVariables
+  include ../variables
+
+
+block variables
+
+
+doctype html
+html(lang="az" dir="ltr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="robots" content="index, follow")
+        meta(name="apple-mobile-web-app-status-bar-style" content=brandColor )
+        meta(name="msapplication-navbutton-color" content=brandColor)
+        meta(name="theme-color" content=brandColor)
+        link(rel="icon" type="image/svg+xml" href="")
+        link(rel="alternate icon" href="")
+        link(rel="mask-icon" href="")
+        title #{title}
+
+    body
+     div#body
+          include ../includes/header
+          include ../includes/menu
+          include ../includes/usability
+
+          block content
+
+
+          include ../includes/footer
+
+
+

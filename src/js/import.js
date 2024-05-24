@@ -18,6 +18,32 @@ import simpleParallax from 'simple-parallax-js';
 //STYLES
 //import 'owl.carousel/dist/assets/owl.carousel.css';
 //import "@fancyapps/ui/dist/fancybox.css";
+
+
+
 import 'animate.css';
 import '../style/to-export.scss';
 import window from 'inputmask/lib/global/window';
+
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel';
+
+
+
+$('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: false,
+    arrows:true,
+    focusOnSelect: true
+});

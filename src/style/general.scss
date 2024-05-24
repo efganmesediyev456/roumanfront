@@ -1,6 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
 .container{
 	width:1312px;
 		margin:0 auto;
@@ -162,14 +165,23 @@ background: linear-gradient(180.00deg, rgb(49, 29, 63),rgba(49, 29, 63, 0.84) 8.
 	}
 	.search_form{
 		display: flex;
+		.select_input:first-child{
+			border-radius: 12px 0 0 12px;
+		}
 		.select_input{
 			/* White/100% */
 			background: rgb(255, 255, 255);
+
+			transition: all ease 1.8s;
+
 			.selected{
 				display: flex;
 				align-items: center;
 				gap:147px;
 				padding: 14px;
+				svg{
+					transition: all ease .5s;
+				}
 				span{
 					/* Open Sans/Regular/18 */
 					color: rgb(49, 29, 63);
@@ -181,10 +193,46 @@ background: linear-gradient(180.00deg, rgb(49, 29, 63),rgba(49, 29, 63, 0.84) 8.
 					text-align: left;
 				}
 			}
+			position:relative;
+
+
+			.dropdown{
+				transition: all ease .5s;
+				max-height: 0px;
+				overflow: hidden;
+				position:absolute;
+				width:100%;
+				background:white;
+				border-radius: 0 0 12px 12px;
+				.item{
+					padding: 14px;
+
+					color: rgb(49, 29, 63);
+					font-family: Open Sans;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 125%;
+					letter-spacing: 0.5px;
+					text-align: left;
+				}
+			}
+			&:hover {
+				transition: all ease .1s;
+
+
+				&:first-child{
+					border-top-left-radius: 12px;
+					border-bottom-left-radius: 0px;
+				}
+				.dropdown{
+					max-height: 1000px;
+				}
+				svg{
+					transform: rotate(180deg);
+				}
+			}
 		}
-		.select_input:first-child{
-			border-radius: 12px 0 0 12px;
-		}
+
 		.select_input:nth-child(2){
 			border-left: 1px solid rgb(185, 185, 185);
 			border-right: 1px solid rgb(185, 185, 185);
@@ -854,7 +902,7 @@ footer{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	display:none;
+	//display:none;
 	.modal_journey{
 		max-height: 740px;
 		overflow-y: auto;
@@ -882,6 +930,9 @@ footer{
 		.modal_body{
 			background: rgb(255, 255, 255);
 
+			.plus:hover, .minus:hover{
+				cursor:pointer;
+			}
 			form{
 				.increase_and_decrease{
 					display: flex;
@@ -942,11 +993,18 @@ footer{
 
 					}
 					.select_form{
+						cursor:pointer;
+
+						position: relative;
+						svg{
+							transition: all ease .5s;
+						}
+
 						.selected{
 							height: 40px;
 							border-radius: 4px;
+							border-radius:4px;
 
-							position: relative;
 							/* Gray/light */
 							background: rgb(247, 247, 247);
 							span:first-of-type{
@@ -968,6 +1026,7 @@ footer{
 							}
 							span:last-of-type{
 								top:0;
+								border-radius:0 4px 4px 0;
 								position: absolute;
 								right: 0;
 								width: 40px;
@@ -979,6 +1038,54 @@ footer{
 								justify-content: center;
 							}
 						}
+						.dropdown{
+							position:absolute;
+
+							max-height: 0px;
+							overflow: hidden;
+							background: white;
+							border-radius: 0 0 4px 4px;
+							z-index:5;
+							width: 100%;
+
+							transition: all ease .5s;
+							.item{
+								padding: 10px 30px 10px 10px;
+								/* Gray/light */
+								background: rgb(247, 247, 247);
+
+								color: rgb(185, 185, 185);
+								font-family: Open Sans;
+								font-size: 12px;
+								font-weight: 400;
+								line-height: 125%;
+								letter-spacing: -1%;
+								text-align: left;
+								&:hover{
+									background: rgb(239, 239, 239);
+
+
+								}
+							}
+						}
+
+						&:hover{
+							.selected{
+								border-radius:4px 0 0 0;
+							}
+							span:last-child{
+								border-radius: 0 4px 0 0;
+							}
+							.dropdown{
+								max-height: 400px;
+							}
+
+						}
+					}
+				}
+				.svg_transform:hover {
+					svg{
+						transform: rotate(180deg);
 					}
 				}
 				.apply_submit{
@@ -1072,8 +1179,237 @@ footer{
 					}
 				}
 			}
+		}
+	}
+}
 
 
+
+.search{
+	height:100%;
+	height:257px;
+	position:relative;
+	& > img{
+		position:absolute;
+		width:100%;
+		height:100%;
+		object-fit: cover;
+		top:0;
+		left:0;
+	}
+	.search_area{
+		form{
+			display: grid;
+			grid-template-columns: 280px 280px 240px;
+			gap:32px;
+			align-items: center;
+			border-radius: 10px;
+
+			box-shadow: 0px 0px 43.4px 0px rgba(0, 0, 0, 0.25);
+			backdrop-filter: blur(10px);
+			/* White/10% */
+			background: rgba(255, 255, 255, 0.1);
+			padding:10px 32px;
+			width: max-content;
+			margin: 0 auto;
+		}
+		position: absolute;
+		bottom:20px;
+		left:50%;
+		transform: translateX(-50%);
+		z-index: 4;
+		.select_input{
+			border-radius: 4px;
+
+			/* White/100% */
+			background: rgb(255, 255, 255);
+			max-width: 280px;
+			.selected{
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				padding: 10px 20px 10px 20px;
+				.label{
+					display: flex;
+					align-items: center;
+					gap:12px;
+					span:first-of-type{
+						display: flex;
+						align-items: center;
+					}
+				}
+
+			}
+		}
+		.submit{
+			height:100%;
+			button{
+				border-radius: 4px;
+				background: rgb(49, 29, 63);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 4px;
+
+				/* Dark Purple/100% */
+				background: rgb(49, 29, 63);
+				width: 100%;
+				height:100%;
+				/* Open Sans/Semi Bold/18 */
+				color: rgb(255, 255, 255);
+				font-family: Open Sans;
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 28px;
+				letter-spacing: 0.5px;
+				text-align: left;
+			}
+		}
+
+	}
+}
+
+.tour_product_section{
+	padding-top:82px;
+	padding-bottom: 82px;
+	.container{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap:32px;
+		.item{
+			box-sizing: border-box;
+			/* Gray/standart */
+			border: 0.5px solid rgb(185, 185, 185);
+			border-radius: 8px;
+
+			box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+			/* White/100% */
+			background: rgb(255, 255, 255);
+
+			.item_image{
+				height: 240px;
+				position: relative;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.item_locations{
+				display: flex;
+				flex-direction: column;
+				gap:10px;
+				position: absolute;
+				right:15px;
+				bottom:15px;
+				span{
+					box-sizing: border-box;
+					/* Gray/standart */
+					border: 0.1px solid rgb(185, 185, 185);
+					border-radius: 21px;
+
+					box-shadow: 1px 2px 20.5px 0px rgba(0, 0, 0, 0.3);
+					/* White/100% */
+					background: rgb(255, 255, 255);
+					width: 40px;
+					height: 40px;
+					display:flex;
+					align-items: center;
+					justify-content: center;
+					/* White/100% */
+					background: rgb(255, 255, 255);
+					border-radius: 100%;
+				}
+			}
+			.item_content{
+				padding:20px 30px 30px 30px;
+				.tour_name{
+					/* Merriweather/Bold/18 */
+					color: rgb(49, 29, 63);
+					font-family: Merriweather;
+					font-size: 18px;
+					font-weight: 700;
+					line-height: 125%;
+					letter-spacing: -1%;
+					text-align: left;
+					margin-bottom: 4px;
+				}
+				.tour_country{
+					display: flex;
+					gap:4px;
+					margin-bottom: 28px;
+					align-items: center;
+					span:first-of-type{
+						display: flex;
+						align-items: center;
+					}
+					span{
+						/* Open Sans/Semi Bold/16 */
+						color: rgb(185, 185, 185);
+						font-family: Open Sans;
+						font-size: 16px;
+						font-weight: 600;
+						line-height: 125%;
+						letter-spacing: 0.5px;
+						text-align: left;
+					}
+				}
+				.tour_price{
+					display:flex;
+					justify-content: space-between;
+					align-items: center;
+					p{
+						/* Open Sans/Semi Bold/16 */
+						color: rgb(185, 185, 185);
+						font-family: Open Sans;
+						font-size: 16px;
+						font-weight: 600;
+						line-height: 125%;
+						letter-spacing: 0.5px;
+						text-align: left;
+						span{
+							/* Merriweather/Bold/18 */
+							color: rgb(49, 29, 63);
+							font-family: Merriweather;
+							font-size: 18px;
+							font-weight: 700;
+							line-height: 125%;
+							letter-spacing: -1%;
+							text-align: left;
+						}
+					}
+					a{
+						border-radius: 8px;
+
+						/* Pinkish red/bright */
+						background: rgb(226, 62, 87);
+						padding: 12px 24px;
+						/* Open Sans/Semi Bold/18 */
+						color: rgb(255, 255, 255);
+						font-family: Open Sans;
+						font-size: 18px;
+						font-weight: 600;
+						line-height: 28px;
+						letter-spacing: 0.5px;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.inside_page{
+	height:102px;
+	header{
+		background:white;
+		a, span{
+			color:black!important;
+		}
+		.planning_model span{
+			color:white!important;
 		}
 	}
 }

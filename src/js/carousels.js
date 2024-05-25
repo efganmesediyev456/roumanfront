@@ -108,30 +108,18 @@ $(".star").hover(function(){
 
 
 
-document.addEventListener( 'DOMContentLoaded', function () {
-	var main = new Splide( '#main-carousel', {
-		type      : 'fade',
-		rewind    : true,
-		pagination: false,
-		arrows    : false,
-	} );
 
-	var thumbnails = new Splide( '#thumbnail-carousel', {
-		fixedWidth  : 100,
-		fixedHeight : 60,
-		gap         : 10,
-		rewind      : true,
-		pagination  : false,
-		isNavigation: true,
-		breakpoints : {
-			600: {
-				fixedWidth : 60,
-				fixedHeight: 44,
-			},
-		},
-	} );
-
-	main.sync( thumbnails );
-	main.mount();
-	thumbnails.mount();
-} );
+if($(".you_may_like_this .splide").length){
+    var splide=new Splide(".you_may_like_this .splide",{
+        autoWidth:true,
+        pagination:false,
+        gap:32,
+        arrows:false,
+    }).mount()
+    $(".you_may_like_this .buttons .left").click(function(){
+        splide.go("<")
+    })
+    $(".you_may_like_this .buttons .right").click(function(){
+        splide.go(">")
+    })
+}

@@ -30,8 +30,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 if ($(".slider_splides").length) {
 	new Splide(".slider_splides", {
+		type: 'fade',
+		rewind: true,
+		autoplay: true,
+		interval: 3000,
+		perPage: 1,
+		gap: 0,
 		pagination: false,
-		type: "fade"
+		loop: true,
+		speed: 1500,
+		pauseOnHover: false,
+
 	}).mount();
 }
 if ($(".blog_section .splide").length) {

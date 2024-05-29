@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Input with Flags and Phone Mask</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+</head>
+<body>
+
+<label for="phone">Phone:</label>
+<input type="tel" id="phone" name="phone">
+
+<div id="flag-container" class="flag-container"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize phone input
+        var input = document.querySelector("#phone");
+        var iti = window.intlTelInput(input, {
+            separateDialCode: true,
+            initialCountry: "auto",
+            preferredCountries: ['TR', 'US'] // Add more preferred countries as needed
+        });
+
+        // Show flag on change
+        iti.promise.then(function() {
+            var countryCode = iti.getSelectedCountryData().iso2;
+            var flagClass = 'flag-icon-' + countryCode.toLowerCase();
+            $('#flag-container').addClass(flagClass);
+        });
+
+        // Update flag on input change
+        input.addEventListener("countrychange", function() {
+            var countryCode = iti.getSelectedCountryData().iso2;
+            var flagClass = 'flag-icon-' + countryCode.toLowerCase();
+            $('#flag-container').attr('class', 'flag-container').addClass(flagClass);
+        });
+    });
+</script>
+
+<style>
+    .flag-container {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+    }
+</style>
+
+</body>
+</html>

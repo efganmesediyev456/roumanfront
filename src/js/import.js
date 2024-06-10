@@ -37,7 +37,7 @@ $('.slider-for').slick({
     slidesToScroll: 1,
     arrows: true,
     fade: false,
-    asNavFor: '.slider-nav'
+    asNavFor: '.slider-nav',
 });
 $('.slider-nav').slick({
     slidesToShow: 6,
@@ -47,6 +47,25 @@ $('.slider-nav').slick({
     arrows:true,
     focusOnSelect: true
 });
+
+
+$(".slider-for .slick-prev").html('<svg width="17.114258" height="7.066528" viewBox="0 0 17.1143 7.06653" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n' +
+    '\t<desc>\n' +
+    '\t\t\tCreated with Pixso.\n' +
+    '\t</desc>\n' +
+    '\t<defs/>\n' +
+    '\t<path id="Vector" d="M16.61 3.53L0.5 3.53" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000" stroke-linejoin="round" stroke-linecap="round"/>\n' +
+    '\t<path id="Vector" d="M3.8 0.5L0.5 3.53L3.8 6.56" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000" stroke-linejoin="round" stroke-linecap="round"/>\n' +
+    '</svg>\n');
+
+$(".slider-for .slick-next").html('<svg width="17.349609" height="7.066528" viewBox="0 0 17.3496 7.06653" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n' +
+    '\t<desc>\n' +
+    '\t\t\tCreated with Pixso.\n' +
+    '\t</desc>\n' +
+    '\t<defs/>\n' +
+    '\t<path id="Vector" d="M0.5 3.53L16.84 3.53" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000" stroke-linejoin="round" stroke-linecap="round"/>\n' +
+    '\t<path id="Vector" d="M13.54 0.5L16.84 3.53L13.54 6.56" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000" stroke-linejoin="round" stroke-linecap="round"/>\n' +
+    '</svg>\n');
 
 $('.tour_slider_right').slick({
     slidesToShow: 1,

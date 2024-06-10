@@ -24,6 +24,7 @@ import '@splidejs/splide/css/core';
 
 
 import {gsap, ScrollTrigger, Draggable, MotionPathPlugin} from "gsap/all";
+import window from "inputmask/lib/global/window";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -158,6 +159,35 @@ $(".close").click(function(){
 
 
 
+
+if($(window).width()<900){
+
+	$('.tranportation_page_more .items.owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		nav:true,
+		responsive:{
+			0:{
+				items:1.4,
+				navigation:false,
+				arrows:false,
+			},
+			600:{
+				items:1.4,
+				navigation:false,
+				arrows:false,
+
+			},
+			1000:{
+				items:1.4,
+				navigation:false,
+				arrows:false,
+
+			}
+		}
+	})
+
+}
 
 if($(".you_may_like_this .splide").length){
     var splide=new Splide(".you_may_like_this .splide",{

@@ -44,13 +44,41 @@ if ($(".slider_splides").length) {
 	}).mount();
 }
 if ($(".blog_section .splide").length) {
-	new Splide(".blog_section .splide", {
+	var splider=new Splide(".blog_section .splide", {
 		autoWidth: true,
 		gap: "39px",
 		pagination: false,
-		type: "loop",
+		padding: "100px",
+		center: false,
+		loop:true,
+		breakpoints: {
+			900: {
+				center: true,
+				autoWidth: false,
+				padding:30,
+				gap:12,
 
+			},
+			599: {
+				autoWidth: false,
+				perPage:1,
+				padding:60,
+
+			}
+		}
 	}).mount();
+	splider.go(1);
+}
+
+if($(window).width()<900){
+	if($(".tour_content .splide").length){
+		new Splide('.tour_content .splide',{
+			padding:64,
+			gap:16,
+			pagination:false,
+			arrows:false,
+		}).mount()
+	}
 }
 
 // if($(".tour_content .splide").length) {
@@ -112,6 +140,19 @@ $(".star").hover(function(){
 				'                  </svg>')
 
 		}
+	})
+})
+
+
+$(".main_resp_burger").click(function(){
+	$(".burger_mobile").css({
+		transform:'translateX(0)'
+	})
+})
+
+$(".close").click(function(){
+	$(".burger_mobile").css({
+		transform:'translateX(-100%)'
 	})
 })
 

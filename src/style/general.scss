@@ -3728,6 +3728,9 @@ height:38px;
 
 .amazing_teams{
 	margin-bottom: 100px;
+	@media(max-width:900px){
+		margin-bottom:80px;
+	}
 	h3{
 		/* Merriweather/Regular/28 */
 		color: rgb(0, 0, 0);
@@ -3786,6 +3789,9 @@ height:38px;
 
 .what_we_offer{
 	margin-bottom: 100px;
+	@media(max-width: 900px){
+		margin-bottom: 80px;
+	}
 	.title{
 		/* Merriweather/Regular/28 */
 		color: rgb(0, 0, 0);
@@ -3796,11 +3802,23 @@ height:38px;
 		letter-spacing: 0.5px;
 		text-align: center;
 		margin-bottom: 32px;
+		@media(max-width: 900px){
+			color: rgb(0, 0, 0);
+			font-family: Merriweather;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 125%;
+			letter-spacing: 0.5px;
+			text-align: center;
+		}
 	}
 	.items{
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap:32px;
+		@media(max-width: 900px){
+			grid-template-columns: repeat(2, 1fr);
+		}
 		.order{
 			/* Merriweather/Bold/24 */
 			color: rgb(0, 0, 0);
@@ -3811,6 +3829,15 @@ height:38px;
 			letter-spacing: -1%;
 			text-align: left;
 			margin-bottom: 32px;
+			@media(max-width: 900px){
+				color: rgb(0, 0, 0);
+				font-family: Merriweather;
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 125%;
+				letter-spacing: -1%;
+				text-align: left;
+			}
 		}
 		h3{
 			max-width: 100px;
@@ -3823,6 +3850,15 @@ height:38px;
 			letter-spacing: 0.5px;
 			text-align: left;
 			margin-bottom: 32px;
+			@media(max-width: 900px){
+				color: rgb(0, 0, 0);
+				font-family: Open Sans;
+				font-size: 12px;
+				font-weight: 600;
+				line-height: 125%;
+				letter-spacing: 0.5px;
+				text-align: left;
+			}
 		}
 		p{
 			/* Open Sans/Regular/18 */
@@ -3833,10 +3869,20 @@ height:38px;
 			line-height: 125%;
 			letter-spacing: 0.5px;
 			text-align: left;
+			@media(max-width: 900px){
+				color: rgb(107, 107, 107);
+				font-family: Open Sans;
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 125%;
+				letter-spacing: 0.5px;
+				text-align: left;
+			}
 		}
 	}
 }
 .explore_section{
+
 
 	&:after{
 		content:"";
@@ -3864,6 +3910,13 @@ height:38px;
 		padding: 58.64px 0;
 		max-width: 1070px;
 		margin:0 auto;
+		@media(max-width: 900px){
+			padding-bottom: 54px;
+			@media(max-width: 900px){
+				padding-left:  16px;
+				padding-right:  16px;
+			}
+		}
 	}
 	h4{
 		/* Merriweather/Regular/28 */
@@ -3875,6 +3928,16 @@ height:38px;
 		letter-spacing: 0.5px;
 		text-align: left;
 		margin-bottom: 32px;
+		@media(max-width: 900px){
+			color: rgb(255, 255, 255);
+			font-family: Merriweather;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 125%;
+			letter-spacing: 0.5px;
+			text-align: left;
+			margin-bottom: 16px;
+		}
 	}
 	p{
 		color: rgb(255, 255, 255);
@@ -3885,6 +3948,16 @@ height:38px;
 		letter-spacing: 0.5px;
 		text-align: left;
 		margin-bottom: 32px;
+		@media(max-width: 900px){
+			color: rgb(255, 255, 255);
+			font-family: Open Sans;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 125%;
+			letter-spacing: 0.5px;
+			text-align: left;
+			margin-bottom: 16px;
+		}
 	}
 	.more{
 		display: flex;
@@ -3906,6 +3979,17 @@ height:38px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			@media(max-width: 900px){
+				color: rgb(255, 255, 255);
+				font-family: Open Sans;
+				font-size: 16px;
+				font-weight: 600;
+				line-height: 28px;
+				letter-spacing: 0.5px;
+				text-align: left;
+				height: 40px;
+				width: 100%;
+			}
 		}
 	}
 }
